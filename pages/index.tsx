@@ -123,7 +123,6 @@ const Home: NextPage<Props> = ({}) => (
             результатов, но и для того, чтобы вызвать доверие у инвесторов
             или своей публики.
           </p>
-          <MainButton variant="contained">Начать работу</MainButton>
         </BlockContentWrapper>
       </Container>
       <ResultsBackground>
