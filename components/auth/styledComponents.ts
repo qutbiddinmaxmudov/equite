@@ -18,6 +18,10 @@ export const DialogTitle = styled.h2`
   line-height: 1.2;
   text-align: center;
   letter-spacing: 0.03em;
+
+  @media (max-width: 576px) {
+    font-size: 34px;
+  }
 `;
 
 export const DialogContent = styled.div`
@@ -26,6 +30,9 @@ export const DialogContent = styled.div`
   box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.5);
   border-radius: 30px;
   padding: 44px 60px 50px;
+  @media (max-width: 576px) {
+    padding: 20px 10px 30px;
+  }
 `;
 
 export const DialogSubtitle = styled.p`

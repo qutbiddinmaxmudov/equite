@@ -42,7 +42,7 @@ const Header = () => {
   return (
     <>
       <StyledHeader>
-        <StyledContainer maxWidth="lg" component="nav">
+        <StyledContainer maxWidth="lg">
           <Link href="/" passHref>
             <LogoLink>
               <Image src={logo} alt="Equite company logo" />
