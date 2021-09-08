@@ -1,6 +1,8 @@
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import TextField from '@mui/material/TextField';
+import Devider from '@mui/material/Divider';
+
 import styled from '@emotion/styled';
 import googleIcon from '../../images/googleIcon.svg';
 
@@ -9,6 +11,7 @@ export const DialogWindow = styled.div`
   max-width: 620px;
   background: #101c2b;
   border-radius: 30px;
+  margin: 0;
 `;
 
 export const DialogTitle = styled.h2`
@@ -48,6 +51,12 @@ export const StyledDialog = styled(Dialog)`
     background: transparent;
     border-radius: 30px;
   }
+
+  .MuiPaper-elevation {
+    margin: 10px;
+    max-width: calc(100% - 20px);
+    max-height: calc(100% - 20px);
+  }
 `;
 
 export const StyledTextField = styled(TextField)`
@@ -64,7 +73,7 @@ export const StyledTextField = styled(TextField)`
 
   & .MuiFilledInput-underline::before,
   & .MuiFilledInput-underline:hover::before {
-    border-bottom: none;
+    border-bottom-color: transparent;
   }
 
   & .MuiFormHelperText-filled {
@@ -108,6 +117,9 @@ export const GoogleEnterButton = styled(Button)`
     width: 30px;
     margin-right: 10px;
   }
+  @media (max-width: 576px) {
+    font-size: 12px;
+  }
 `;
 
 export const DialogLastWord = styled.p`
@@ -122,4 +134,13 @@ export const EnterText = styled.span`
   font-weight: 500;
   color: #f17c5f;
   cursor: pointer;
+`;
+
+export const StyledDevider = styled(Devider)`
+  margin: 2em -60px 26px;
+  background: #1d2f3e;
+
+  @media (max-width: 576px) {
+    margin: 2em -10px 26px;
+  }
 `;

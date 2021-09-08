@@ -1,4 +1,3 @@
-import Button from '@mui/material/Button';
 import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -13,6 +12,7 @@ import {
   LogoLink,
   HeaderList,
   HeaderLink,
+  HeaderButton,
 } from './styledComponents';
 
 const navLinks = [
@@ -67,17 +67,13 @@ const Header = () => {
             <HeaderLink as="button" className="button" onClick={openSignIn}>
               Войти
             </HeaderLink>
-            <Button
+            <HeaderButton
               variant="outlined"
               color="primary"
-              sx={{
-                padding: '10px 2em',
-                marginLeft: '2rem',
-              }}
               onClick={openRegister}
             >
               Зарегистрироваться
-            </Button>
+            </HeaderButton>
           </HeaderList>
         </StyledContainer>
       </StyledHeader>

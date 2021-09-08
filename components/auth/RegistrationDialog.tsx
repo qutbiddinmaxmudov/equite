@@ -1,4 +1,3 @@
-import Devider from '@mui/material/Divider';
 import React from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
@@ -14,6 +13,7 @@ import {
   EnterText,
   DialogTitle,
   DialogContent,
+  StyledDevider,
 } from './styledComponents';
 import { FormSchema } from '../../utils/YupSchemas';
 
@@ -77,10 +77,7 @@ const RegistrationDialog = React.memo(
             </form>
             <FormDevider>ИЛИ</FormDevider>
             <GoogleEnterButton fullWidth>Продолжить с Google</GoogleEnterButton>
-            <Devider
-              variant="fullWidth"
-              sx={{ margin: '2em -60px 26px', background: '#1D2F3E' }}
-            />
+            <StyledDevider variant="fullWidth" />
             <DialogLastWord>
               Уже есть учетная запись?{' '}
               <EnterText onClick={changeModal}>Вход в систему</EnterText>
