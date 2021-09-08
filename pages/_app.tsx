@@ -37,7 +37,7 @@ const MyApp = (props: MyAppProps) => {
   return (
     <CacheProvider value={emotionCache}>
       <Head>
-        <title>My page</title>
+        <title>Equite | Криптовалюта доступна в каждом доме!</title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
