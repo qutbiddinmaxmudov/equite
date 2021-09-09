@@ -1,19 +1,15 @@
 import React from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
+import Typography from '@mui/material/Typography';
+import Divider from '@mui/material/Divider';
 import {
   StyledDialog,
   DialogWindow,
-  DialogSubtitle,
   StyledTextField,
   StyledButton,
-  FormDevider,
   GoogleEnterButton,
-  DialogLastWord,
-  EnterText,
-  DialogTitle,
   DialogContent,
-  StyledDevider,
 } from './styledComponents';
 import { FormSchema } from '../../utils/YupSchemas';
 
@@ -41,11 +37,20 @@ const RegistrationDialog = React.memo(
         aria-describedby="alert-dialog-description"
       >
         <DialogWindow>
-          <DialogTitle>Добро Пожаловать</DialogTitle>
+          <Typography
+            variant="h1"
+            component="h3"
+            textAlign="center"
+            fontWeight={700}
+            marginTop={6}
+            marginBottom={5}
+          >
+            Добро Пожаловать
+          </Typography>
           <DialogContent>
-            <DialogSubtitle>
+            <Typography variant="body2" marginBottom={4}>
               Зарегистрируйтесь в системе Equite.io, чтобы перейти к Equite.
-            </DialogSubtitle>
+            </Typography>
             <form action="" onSubmit={form.handleSubmit(consoleSubmit)}>
               <StyledTextField
                 {...form.register('email')}
@@ -75,13 +80,39 @@ const RegistrationDialog = React.memo(
                 Продолжить
               </StyledButton>
             </form>
-            <FormDevider>ИЛИ</FormDevider>
+            <Typography
+              variant="overline"
+              marginTop={2.5}
+              marginBottom={2}
+              textAlign="center"
+              component="p"
+            >
+              ИЛИ
+            </Typography>
             <GoogleEnterButton fullWidth>Продолжить с Google</GoogleEnterButton>
-            <StyledDevider variant="fullWidth" />
-            <DialogLastWord>
+            <Divider
+              variant="fullWidth"
+              sx={{
+                margin: '2em -60px 26px',
+                background: '#1d2f3e',
+                '@media (max-width: 576px)': {
+                  margin: '2em -10px 26px',
+                },
+              }}
+            />
+            <Typography variant="body2">
               Уже есть учетная запись?{' '}
-              <EnterText onClick={changeModal}>Вход в систему</EnterText>
-            </DialogLastWord>
+              <Typography
+                component="span"
+                variant="inherit"
+                color="#f17c5f"
+                fontWeight={500}
+                sx={{ cursor: 'pointer' }}
+                onClick={changeModal}
+              >
+                Вход в систему
+              </Typography>
+            </Typography>
           </DialogContent>
         </DialogWindow>
       </StyledDialog>

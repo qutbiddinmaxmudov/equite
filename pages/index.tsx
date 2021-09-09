@@ -1,44 +1,13 @@
 import type { NextPage } from 'next';
 import React from 'react';
-import { GetStaticPropsResult } from 'next';
 import Image from 'next/image';
 import styled from '@emotion/styled';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
 import servicesBackground from '../images/bitcoin.png';
 import resultsBackground from '../images/Illustration.png';
-
-export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {
-  return { props: {} };
-}
-
-interface BlockContentWrapperProps {
-  right?: boolean;
-}
-
-const BlockContentWrapper = styled.div<BlockContentWrapperProps>`
-  width: 100%;
-  max-width: 584px;
-  ${(props) =>
-    props.right
-      ? `
-    margin-left:auto;
-    @media(max-width:576px){
-      text-align:right
-    }
-  `
-      : ''}
-`;
-
-const MainTitle = styled.h2`
-  font-weight: 600;
-  font-size: 40px;
-  line-height: 1.4;
-  margin-bottom: 1.5em;
-  @media (max-width: 576px) {
-    font-size: 2em;
-  }
-`;
 
 const MainButton = styled(Button)`
   background: #3f51b5;
@@ -99,16 +68,16 @@ const Home: NextPage<Props> = ({}) => (
   <main>
     <ServicesBlock>
       <Container>
-        <BlockContentWrapper>
-          <MainTitle>
+        <Grid item lg={6} md={9}>
+          <Typography variant="h2">
             Иструмент мониторинга для трейдера, которому доверяют
-          </MainTitle>
-          <p>
+          </Typography>
+          <Typography>
             Создайте портфолио со своими фактическими успехами — повысьте
             доверие у заинтересованных людей.
-          </p>
+          </Typography>
           <MainButton variant="contained">Начать работу</MainButton>
-        </BlockContentWrapper>
+        </Grid>
       </Container>
       <ServicesBackground>
         <Image src={servicesBackground} alt="Иллюстрация" />
@@ -116,14 +85,14 @@ const Home: NextPage<Props> = ({}) => (
     </ServicesBlock>
     <ResultsBlock>
       <Container>
-        <BlockContentWrapper right>
-          <MainTitle>Проверенные результаты</MainTitle>
-          <p>
+        <Grid item lg={6} md={9} marginLeft="auto">
+          <Typography variant="h2">Проверенные результаты</Typography>
+          <Typography>
             Объективные и сухие цифры подойдут не только для мониторинга своих
             результатов, но и для того, чтобы вызвать доверие у инвесторов
             или своей публики.
-          </p>
-        </BlockContentWrapper>
+          </Typography>
+        </Grid>
       </Container>
       <ResultsBackground>
         <Image src={resultsBackground} alt="Иллюстрация" />

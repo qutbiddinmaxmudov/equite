@@ -15,8 +15,8 @@ import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 //   fontStyle: style,
 //   fontWeight: weight,
 //   src: `
-//       local('Raleway'),
-//       local('Raleway-Regular'),
+//       local('GothamPro'),
+//       local('GothamPro-Regular'),
 //       url(${font}) format('woff2')
 //     `,
 //   unicodeRange:
@@ -38,6 +38,7 @@ let theme = createTheme({
 
     secondary: {
       main: '#8561c5',
+      contrastText: 'f17c5f',
       //main: '#673ab7',
       // #4ba0d7
     },
@@ -52,6 +53,40 @@ let theme = createTheme({
   },
   typography: {
     fontFamily: ['Montserrat', 'sans-serif'].join(','),
+    body2: {
+      textAlign: 'center',
+      fontSize: 20,
+      lineHeight: 1.5,
+      letterSpacing: '0.03em',
+      fontWeight: 400,
+    },
+    h2: {
+      fontWeight: 600,
+      fontSize: 40,
+      lineHeight: 1.4,
+      marginBottom: '1.5em',
+      '@media (max-width: 576px)': {
+        fontSize: '2em',
+      },
+    },
+    h1: {
+      fontSize: 70,
+      lineHeight: 1.2,
+      letterSpacing: '0.03em',
+      // fontSize: '3em',
+      // textAlign: 'center',
+      // textShadow: '0 0 10px white',
+
+      // '@media (max-width: 576px)': {
+      //   fontSize: '2em',
+      // },
+    },
+    overline: {
+      fontWeight: 500,
+      fontSize: 14,
+      lineHeight: '13px',
+      textTransform: 'uppercase',
+    },
   },
   // status: {
   //   danger: 'orange',
